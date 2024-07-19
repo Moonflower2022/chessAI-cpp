@@ -25,7 +25,7 @@ Move get_user_move(Board board)
                 return move;
             }
         }
-        cout << "Invalid move. Try again." << endl;
+        cout << "\nInvalid move. Try again.\n" << endl;
         cout << board << endl;
     }
 }
@@ -35,6 +35,7 @@ int main(int argc, char const *argv[])
     init_tables();
     Board board = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     pair<GameResultReason, GameResult> result_pair = board.isGameOver();
+    cout << "\n\n";
     cout << board << endl;
     while (result_pair.second == GameResult::NONE)
     {
@@ -46,7 +47,7 @@ int main(int argc, char const *argv[])
 
         board.makeMove(computer_move);
         cout << board << endl;
-        cout << "Black's move: " << uci::moveToUci(computer_move) << endl;
+        cout << "Black's move: " << uci::moveToUci(computer_move) << endl << endl;
     }
 
     return 0;
