@@ -1,6 +1,7 @@
 #include <iostream>
 #include "chess.hpp"
 #include "bot.cpp"
+#include "evaluation.cpp"
 
 using namespace chess;
 using namespace std;

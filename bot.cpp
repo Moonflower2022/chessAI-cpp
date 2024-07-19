@@ -1,14 +1,13 @@
 #include <iostream>
 #include "chess.hpp"
 #include "evaluation.cpp"
-#include <string>
-#include <vector>
 
 using namespace chess;
 using namespace std;
 
 pair<int, Move> minimax(int depth, Board board, int alpha, int beta, bool is_maximizing_player)
 {
+
     if (depth == 0)
     {
         return {evaluate_fen(board.getFen()), Move()};

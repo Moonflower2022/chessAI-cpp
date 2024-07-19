@@ -1,6 +1,10 @@
+#pragma once
+
 #include <iostream>
 
-#define MAX std::pow(2, 31) - 1
+using namespace std;
+
+#define MAX pow(2, 31) - 1
 
 #define PAWN 0
 #define KNIGHT 1
@@ -802,9 +806,9 @@ int *eg_pesto_table[6] =
         eg_queen_table,
         eg_king_table};
 
-std::vector<int> gamephaseInc = {0, 0, 1, 1, 1, 1, 2, 2, 4, 4, 0, 0};
-std::vector<std::vector<int>> mg_table(12, std::vector<int>(64, 0));
-std::vector<std::vector<int>> eg_table(12, std::vector<int>(64, 0));
+vector<int> gamephaseInc = {0, 0, 1, 1, 1, 1, 2, 2, 4, 4, 0, 0};
+vector<vector<int>> mg_table(12, vector<int>(64, 0));
+vector<vector<int>> eg_table(12, vector<int>(64, 0));
 
 void init_tables()
 {
@@ -821,10 +825,10 @@ void init_tables()
     }
 }
 
-int evaluate_fen(const std::string &fen)
+int evaluate_fen(const string &fen)
 {
     int side_to_move;
-    std::vector<int> board(64, EMPTY);
+    vector<int> board(64, EMPTY);
 
     int index = 0;
 
@@ -853,8 +857,8 @@ int evaluate_fen(const std::string &fen)
         }
     }
 
-    std::vector<int> mg(2, 0);
-    std::vector<int> eg(2, 0);
+    vector<int> mg(2, 0);
+    vector<int> eg(2, 0);
     int gamePhase = 0;
 
     mg[WHITE] = 0;
