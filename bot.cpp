@@ -66,29 +66,3 @@ pair<int, Move> minimax(int depth, Board board, int alpha, int beta, bool is_max
 
     return {best_move_value, best_move};
 }
-
-int main(int argc, char const *argv[])
-{
-    init_tables();
-    Board board = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-    // Board board = Board("Q2qkbnr/p2bpppp/2n5/8/8/8/PPPP1PPP/RNBQKBNR b KQk - 0 5");
-    pair<GameResultReason, GameResult> resultPair = board.isGameOver();
-    cout << board << endl;
-    while (resultPair.second == GameResult::NONE)
-    {
-        string input;
-        cout << "Input a move: "; // Type a number and press enter
-        cin >> input;
-        Move userMove = uci::uciToMove(board, input);
-
-        board.makeMove(userMove);
-        cout << board << endl;
-
-        Move computer_move = minimax(4, board, -MAX, MAX, false).second;
-
-        board.makeMove(computer_move);
-        cout << board << endl;
-    }
-
-    return 0;
-}
