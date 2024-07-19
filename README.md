@@ -1,7 +1,9 @@
 # chessAI-cpp
 
-A chess bot written in c++
+A chess bot written in c++ using minimax breadth-first-search and alpha-beta pruning.
 
-use `g++ -std=c++20 main.cpp -o out` to compile.  
+Use `g++ -std=c++20 main.cpp -o out` to compile.  
 
-For usage, just do `./out` and then pull your terminal a bit higher to see all of the board.  
+For usage, just do `./out` and then make your terminal big enough to see the entire board.  
+
+The `chess.hpp` file is from [this c++ chess library](https://github.com/Disservin/chess-library) and is not my work.  
