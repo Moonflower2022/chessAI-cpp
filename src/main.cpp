@@ -1,6 +1,6 @@
 #include <iostream>
-#include "chess.hpp"
-#include "bot.cpp"
+#include "lib/chess.hpp"
+#include "minimax.cpp"
 #include "evaluation.cpp"
 
 using namespace chess;

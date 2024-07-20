@@ -1,5 +1,5 @@
 #include <iostream>
-#include "chess.hpp"
+#include "lib/chess.hpp"
 #include "evaluation.cpp"
 
 using namespace chess;
